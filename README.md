@@ -4,12 +4,13 @@ Minimal macOS autoclicker built with SwiftUI. Clicks at a configurable interval 
 
 ## Download
 
-Grab `Autoclicker.zip` from [Releases](../../releases), unzip, and run:
+Grab `Autoclicker.zip` from [Releases](../../releases) and unzip.
 
-```sh
-xattr -cr Autoclicker.app   # unsigned build, clears Gatekeeper quarantine
-open Autoclicker.app
-```
+The app is unsigned, so macOS blocks it on first open:
+
+1. Double-click `Autoclicker.app` — macOS says it can't verify the developer.
+2. Go to **System Settings → Privacy & Security**, scroll down, click **Open Anyway**.
+3. Subsequent launches open normally.
 
 ## Build
 
