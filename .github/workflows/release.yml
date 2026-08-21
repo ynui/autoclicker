@@ -18,13 +18,13 @@ jobs:
           files: Autoclicker.zip
 
       - name: Bump Homebrew tap
-        if: ${{ secrets.HOMEBREW_TAP_TOKEN != '' }}
         env:
           TOKEN: ${{ secrets.HOMEBREW_TAP_TOKEN }}
         run: |
+          if [ -z "$TOKEN" ]; then echo "HOMEBREW_TAP_TOKEN not set; skipping tap bump"; exit 0; fi
           VERSION="${GITHUB_REF_NAME#v}"
           SHA=$(shasum -a 256 Autoclicker.zip | cut -d' ' -f1)
-          git clone --depth 1 https://x-access-token:$TOKEN@github.com/ynui/homebrew-tap.git tap
+          git clone --depth 1 "https://x-access-token:$TOKEN@github.com/ynui/homebrew-tap.git" tap
           cd tap
           sed -i '' -e "s/version \".*\"/version \"$VERSION\"/" -e "s/sha256 \".*\"/sha256 \"$SHA\"/" Casks/autoclicker.rb
           git config user.name "github-actions[bot]"
