@@ -4,7 +4,13 @@ Minimal macOS autoclicker built with SwiftUI. Clicks at a configurable interval 
 
 ## Download
 
-Grab `Autoclicker.zip` from [Releases](../../releases) and unzip.
+Or with Homebrew (no Gatekeeper prompt):
+
+```sh
+brew install --cask ynui/tap/autoclicker
+```
+
+Manual: grab `Autoclicker.zip` from [Releases](../../releases) and unzip.
 
 The app is unsigned, so macOS blocks it on first open:
 
