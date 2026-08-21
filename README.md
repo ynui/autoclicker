@@ -31,3 +31,15 @@ Requires Xcode command line tools (`xcode-select --install`). The app needs **Ac
 
 - Settings persist between launches.
 - If built without a codesigning identity, the ad-hoc signature changes every build, so `build.sh` resets the stale Accessibility grant via `tccutil`.
+
+## Releasing
+
+```sh
+git tag vX.Y.Z && git push origin vX.Y.Z
+```
+
+CI builds the app, attaches it to a GitHub release, and bumps the Homebrew tap.
+
+## License
+
+[MIT](LICENSE)
