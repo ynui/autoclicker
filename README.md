@@ -2,6 +2,15 @@
 
 Minimal macOS autoclicker built with SwiftUI. Clicks at a configurable interval (10 ms – 10 s) with left, right, or double click. Toggle with **F6** or the button.
 
+## Download
+
+Grab `Autoclicker.zip` from [Releases](../../releases), unzip, and run:
+
+```sh
+xattr -cr Autoclicker.app   # unsigned build, clears Gatekeeper quarantine
+open Autoclicker.app
+```
+
 ## Build
 
 ```sh
